@@ -1,0 +1,173 @@
+.our-team {
+    text-align: center;
+    margin-bottom: 30px; /* Add some margin to separate sections */
+}
+
+.our-team .pic {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Increased height */
+    overflow: hidden;
+}
+
+.our-team .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Center the image and focus on the top */
+}
+
+.our-team .pic:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.our-team .pic:after {
+    content: "";
+    width: 90%;
+    height: 90%;
+    border: 1px solid #f5f5f6;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.our-team:hover .pic:before,
+.our-team:hover .pic:after {
+    opacity: 1;
+}
+
+.our-team .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 18px; /* Default font size */
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.our-team:hover .hover-text {
+    font-size: 14px; /* Smaller font size on hover */
+    opacity: 1;
+}
+
+.our-team .social-links {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 20px; /* Adjusted position */
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.our-team:hover .social-links {
+    opacity: 1;
+}
+
+.our-team .social-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.our-team .social-links li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 15px;
+    color: rgba(12, 115, 71, 0.8); /* Updated color with opacity */
+    border: 1px solid rgba(12, 115, 71, 0.8); /* Updated color with opacity */
+    transition: all 0.3s ease 0s;
+}
+
+.our-team .team-content {
+    padding: 20px 0; /* Increased padding */
+    background: #cadfd3; /* Changed background color */
+    border-top: 2px solid rgba(12, 115, 71, 0.8); /* Updated color with opacity */
+    overflow: hidden;
+    position: relative;
+    height: 130px;
+
+}
+
+.our-team .team-content:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 115, 71, 0.8); /* Updated color with opacity */
+    position: absolute;
+    top: -100%;
+    left: 0;
+    transition: all 0.3s ease-out 0s;
+}
+
+.our-team:hover .team-content:before {
+    top: 0;
+}
+
+.our-team .title {
+    font-size: 24px;
+    color: #0c7347; /* Updated color */
+    margin: 0 0 5px;
+    text-transform: capitalize;
+    z-index: 1;
+    position: relative;
+    transition: all 0.5s ease 0s;
+}
+
+.our-team .post {
+    display: block;
+    font-size: 14px;
+    color: #0c7347; /* Changed to green */
+    text-transform: capitalize;
+    z-index: 1;
+    position: relative;
+    transition: all 0.5s ease 0s;
+}
+
+.our-team:hover .title,
+.our-team:hover .post {
+    color: #fff; /* Changed to white on hover */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 992px) {
+    .col-md-3 {
+        flex: 0 0 33%; /* Two cards per row on medium screens */
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 50%; /* One card per row on small screens */
+        max-width: 300px !important; /* Ensure card takes full width */
+        width: 300px; /* Set a fixed width to maintain height consistency */
+        margin: 0 auto; /* Center the card */
+    }
+}
+@media screen and (max-width: 576px) {
+    .col-md-3 {
+        flex: 0 0 100%; /* One card per row on small screens */
+        max-width: 300px !important; /* Ensure card takes full width */
+        width: 300px; /* Set a fixed width to maintain height consistency */
+        margin: 0 auto; /* Center the card */
+    }
+}
+
